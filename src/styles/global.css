@@ -1,0 +1,20 @@
+/*------- farver --------*/
+:root {
+  --gul: #ffcc4a;
+  --grøn: #4eaf4e;
+  --sort18: #181818;
+  --sort00: #000;
+  --mørkegrå: #323232;
+  --lysegrå: #c1c1c1;
+  --lysegrå-border: #e3e3e3;
+  --lillagrå-brødtekt: #595566;
+  --grå-baggrund: #d9d9d9;
+  --hvid-baggrund: #f5f5f5;
+  --hvid: #fff;
+
+  /*--------- Fonts ---------*/
+  --brødtekst: "lato";
+  --header: "Cabin";
+
+  --border-r: 1.8rem;
+}
