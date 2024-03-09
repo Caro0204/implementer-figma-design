@@ -3,41 +3,69 @@ import TeamCard from "../components/TeamCard.astro";
 import Button from "../components/Button.astro";
 import "../styles/global.css"
 import "../styles/reset.css"
+import Banner from "../components/Banner.astro";
 ---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<Banner  imgPath="/src/assets/images/banner-team.jpg" name="banner team" title="team" suptitle="The Consultors"/>
+
 <Button color="#black" Buttontext="Join our team"/>
+<section>
 <TeamCard
     name="Sarah Jasmine"
-    description="Leverage agile frameworks to provide a robust synopsis for high level overviews."
     imgPath="/src/assets/images/team-person-sj.jpg"
-    iconName="instagram, facebook, twitter"
-  />
+    namePerson="Sarah Jasmine"/>
+    <p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
+
 <TeamCard
     name="John Carter"
-    description="Leverage agile frameworks to provide a robust synopsis for high level overviews."
     imgPath="/src/assets/images/team-person-jc.jpg"
-    iconName="instagram, facebook, twitter"
-  />
+   namePerson="John Carter"/>
+   <p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
+  
   <TeamCard
     name="Daisy Stella"
-    description="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+   description="billede af person"
     imgPath="/src/assets/images/team-person-ds.jpg"
-    iconName="instagram, facebook, twitter"
-  />
+     namePerson="Daisy Stella"/>
+ <p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
+
   <TeamCard
     name="Maya Elizabeth"
-    description="Leverage agile frameworks to provide a robust synopsis for high level overviews."
-    imgPath="/src/assets/images/team-person-me.jpg"
-    iconName="instagram, facebook, twitter"
-  />
+   description="billede af person"
+   imgPath="/src/assets/images/team-person-me.jpg"
+   namePerson="Maya Elizabeth"/>
+
+   <p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
   <TeamCard
     name="Ryan Jackson"
-    description="Leverage agile frameworks to provide a robust synopsis for high level overviews."
-    imgPath="/src/assets/images/team-person-rj.jpg"
-    iconName="instagram, facebook, twitter"
+   description="billede af person"    
+   imgPath="/src/assets/images/team-person-rj.jpg"
+    namePerson="Ryan Jackson"
   />
+   <p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
   <TeamCard
     name="Lilly Victoria"
-    description="Leverage agile frameworks to provide a robust synopsis for high level overviews."
-    imgPath="/src/assets/images/team-person-lv.jpg"
-    iconName="instagram, facebook, twitter"
+   description="billede af person"
+imgPath="/src/assets/images/team-person-lv.jpg"
+ namePerson="Lilly Victoria"
   />
+   <p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
+   </section>
+	</body>
+</html>
+<style>
+
+    p{
+        font-family: var(--brødtekst);
+        color: var(--lillagrå-brødtekt);
+    }
+</style>

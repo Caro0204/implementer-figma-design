@@ -7,21 +7,18 @@ import "../styles/reset.css";
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/**/*.{jpeg,jpg,png,gif}"
 );
-const { name, description, imgPath } = Astro.props;
+const { name, imgPath } = Astro.props;
 if (!images[imgPath])
   throw new Error(
     `"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`
   );
 
-  const { iconName } = Astro.props;
-  
+  const { namePerson } = Astro.props;
 ---
 
 <article class="card">
   <Image src={images[imgPath]()} alt={name} />
-  <p>{name}</p>
-  <p>{description}</p>
-  <!-- <Icon name={iconName} /> -->
+  <p>{namePerson}</p>
 </article>
 
 <style>
