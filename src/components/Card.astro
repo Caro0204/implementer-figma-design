@@ -1,4 +1,27 @@
 ---
+import "../styles/global.css"
+import "../styles/reset.css"
+import { Icon } from "astro-icon/components";
 
+const { title, text ,iconName} = Astro.props;
 ---
+<article>
+    <div class="grid-container">
+<Icon name={iconName} />
+    <h3>{title}</h3>
+    <p>{text}</p>
+    <a href="#0">Read More</a>
+ <Icon name={iconName} />
+ </div>   
+</article>
 
+<style>
+    .grid-container{
+        display:grid;
+        gap:1rem;
+
+        @container (midth > 600px){
+            grid-template-columns: repeat(1fr, 4)
+        }
+    }
+</style>

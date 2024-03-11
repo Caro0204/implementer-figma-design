@@ -1,0 +1,42 @@
+---
+import "../styles/global.css"
+import "../styles/reset.css"
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato">
+        <title>Document</title>
+    </head>
+    <body>
+        <header></header>
+        <main>
+        <slot></slot>
+        </main>
+        <footer></footer>
+    </body>
+</html>
+
+<style>
+
+main{
+display: grid;
+grid-template-columns:
+    [full-start] 1fr
+    [content] minmax(0,75rem)
+1fr [full-end];
+gap: 1rem;
+
+> * {
+    grid-column: content;
+}
+
+.full{
+    grid-column: full;
+}
+}
+
+</style>

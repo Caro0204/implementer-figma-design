@@ -1,5 +1,6 @@
 ---
 import type { ImageMetadata } from "astro";
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import "../styles/global.css";
 import "../styles/reset.css";
@@ -7,24 +8,29 @@ import "../styles/reset.css";
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/**/*.{jpeg,jpg,png,gif}"
 );
-const { name, imgPath } = Astro.props;
+const { name, imgPath, namePerson, iconName} = Astro.props;
 if (!images[imgPath])
   throw new Error(
     `"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`
   );
-
-  const { namePerson } = Astro.props;
 ---
 
 <article class="card">
   <Image src={images[imgPath]()} alt={name} />
-  <p>{namePerson}</p>
+  <p class="headfont">{namePerson}</p>
+  <p class="brødtekst">Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
+  <div class="icons">
+<Icon name={iconName} />
+<Icon name={iconName} />
+<Icon name={iconName} />
+  </div>
 </article>
 
 <style>
 
   article{
     display: inline-flex;
+
    
   }
 .card{
@@ -38,4 +44,10 @@ border-radius: var(--border-r);
   }
 }
 
+.headfont{
+  font-size: 1.8rem;
+}
+.brødtekst{
+
+}
 </style>

@@ -5,8 +5,21 @@ const {color, Buttontext}= Astro.props;
 <button {color}>{Buttontext}</button>
 
 <style>
+    @import url("https://fonts.googleapis.com/css2?family=Cabin&family=Lato");
 button{
+display: flex;
+padding: 1rem 2rem;
+align-items: flex-start;
+gap: 0.625rem;
+border-radius: 2.625rem;
+background: var(--sort18);
+color: var(--hvid);
 
+&:hover{
+    border: 2px solid var(--sort18);
+    background: var(--hvid);
+    color: var(--sort18);
+}
 }
 
 </style>

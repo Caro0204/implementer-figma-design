@@ -1,11 +1,43 @@
 ---
 import "../styles/global.css"
 import "../styles/reset.css"
+
+const { Headtitle, variant} = Astro.props;
 ---
 
-<h2><slot></slot></h2>
+<div class="box" data-background={variant}><h1>{Headtitle}</h1></div>
 
 <style>
 
+    .box{
+      display: inline-flex;
+padding: 0rem 0.9375rem;
+align-items: flex-start;
+gap: 0.625rem;
+
+    }
+h1{
+    text-transform: uppercase;
+    font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: 1.475rem;
+letter-spacing: 0.145rem;
+color:var(--sort18);
+font-family: var(--lato):
+}
+[data-background="yellow"] {
+    background: var(--gul);
+    border-radius: 1.25rem;  
+}
+[data-background="green"] {
+    background: var(--grøn);
+    border-radius: 1.25rem;  
+}
+
+[data-background="black"] {
+    background: green;
+    border-radius: 1.25rem;  
+}
 
 </style>
