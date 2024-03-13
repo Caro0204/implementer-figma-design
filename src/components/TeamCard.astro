@@ -8,7 +8,7 @@ import "../styles/reset.css";
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/**/*.{jpeg,jpg,png,gif}"
 );
-const { name, imgPath, namePerson, iconName} = Astro.props;
+const { name, imgPath, namePerson, iconName, iconName1, iconName2} = Astro.props;
 if (!images[imgPath])
   throw new Error(
     `"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`
@@ -21,22 +21,21 @@ if (!images[imgPath])
   <p class="brødtekst">Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
   <div class="icons">
 <Icon name={iconName} />
-<Icon name={iconName} />
-<Icon name={iconName} />
+<Icon name={iconName1} />
+<Icon name={iconName2} />
   </div>
 </article>
 
 <style>
-
-  article{
-    display: inline-flex;
-
-   
-  }
+.icons{
+  display: flex;
+  gap: 1.2rem;
+}
 .card{
 display: flex;
 flex-direction: column;
 align-items: center;
+text-align: center;
 gap:13px;
 
   img{

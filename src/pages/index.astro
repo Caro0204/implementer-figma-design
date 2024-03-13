@@ -1,5 +1,6 @@
 ---
-
+import "../styles/global.css"
+import "../styles/reset.css"
 ---
 
 <html lang="en">
@@ -31,8 +32,37 @@
 </html>
 
 <style>
+
+	h1{
+		color: var(--sort18);
+	text-align: center;
+padding:1rem;
+padding-top: 3rem;
+font-family: var(--cabin);
+font-size: 3.1rem;
+font-style: normal;
+font-weight: 700;
+line-height: 3.6rem;
+	}
 	.menu{
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+		li{
+			list-style: none;
+			background: var(--mørkegrå);
+			padding: 1rem 4rem 1rem 4rem;
+		}
+		a{
+			color: var(--hvid);
+			
+			font-family: var(--cabin);
+			font-size: 2.1rem;
+font-style: normal;
+font-weight: 700;
+line-height: 3.6rem;
+
+		}
 	}
 </style>

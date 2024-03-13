@@ -6,6 +6,7 @@
   --sort00: #000;
   --mørkegrå: #323232;
   --lysegrå: #c1c1c1;
+  --lysegrå-tekst: #a9a9a9;
   --lysegrå-border: #e3e3e3;
   --lillagrå-brødtekt: #595566;
   --grå-baggrund: #d9d9d9;
@@ -17,6 +18,7 @@
   --cabin: "Cabin";
 
   --border-r: 1.8rem;
+  --gap: 1rem;
 }
 .headfont {
   color: var(--sort18);

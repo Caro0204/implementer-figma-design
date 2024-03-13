@@ -1,6 +1,6 @@
 ---
-import "../styles/global.css"
-import "../styles/reset.css"
+import "../styles/global.css";
+import "../styles/reset.css";
 ---
 
 <dl>
@@ -23,27 +23,29 @@ import "../styles/reset.css"
 </dl>
 
 <style>
-    dl {
-  margin: 3rem;
-  text-align: center;
-  
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 8.4rem;
-  
-  > * {
+  dl {
+    margin: 3rem;
+    text-align: center;
+
     display: flex;
-    flex-direction: column-reverse;
-    font-size: 1.1rem;
-    color: var(--sort18);
-    
-    :last-child {
-      font-size: 3.1rem;
-      font-weight: 700;
-      font-family: var(--cabin);
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8.4rem;
+
+    @media (width > 600px) {
+      flex-direction: row;
+    }
+    > * {
+      display: flex;
+      flex-direction: column-reverse;
+      font-size: 1.1rem;
+      color: var(--sort18);
+
+      :last-child {
+        font-size: 3.1rem;
+        font-weight: 700;
+        font-family: var(--cabin);
+      }
     }
   }
-  
-}
 </style>

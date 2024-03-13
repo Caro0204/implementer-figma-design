@@ -1,27 +1,67 @@
 ---
-import "../styles/global.css"
-import "../styles/reset.css"
+import "../styles/global.css";
+import "../styles/reset.css";
 import { Icon } from "astro-icon/components";
 
-const { title, text ,iconName} = Astro.props;
+const { title, text, iconNametop } = Astro.props;
 ---
+
 <article>
-    <div class="grid-container">
-<Icon name={iconName} />
+  <div>
+    <div class="felx">
+    <Icon name={iconNametop} />
     <h3>{title}</h3>
-    <p>{text}</p>
+    </div>
+    <p class="brødtekst">{text}</p>
     <a href="#0">Read More</a>
- <Icon name={iconName} />
- </div>   
+  </div>
 </article>
 
 <style>
-    .grid-container{
-        display:grid;
-        gap:1rem;
+  :root {
+    --arrow: url("../src/icons/pil.svg");
+  }
 
-        @container (midth > 600px){
-            grid-template-columns: repeat(1fr, 4)
-        }
-    }
+  .felx{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 1.3rem;
+  }
+  article{
+    display: flex;
+padding: 2.25rem 1.4375rem;
+align-items: flex-start;
+gap: 0.625rem;
+border-radius: 1.2rem;
+border: 1px solid var( --lysegrå-border);
+background: var(--hvid);
+
+  }
+
+  h3 {
+    color: var(--sort18);
+    font-family: var(--cabin);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.45rem;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: var(--sort18);
+    text-decoration: none;
+    font-family: var(--lato);
+  }
+  a::after {
+    content: "";
+    flex-shrink: 0;
+    width: 1.6rem;
+    aspect-ratio: 1;
+    justify-content: center;
+    background: var(--arrow) 50% 50% / contain no-repeat;
+  }
 </style>

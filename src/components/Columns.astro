@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+import "../styles/reset.css";
+
+const {cols} = Astro.props;
+---
+
+<div class="grid-container" style={`--cols: ${cols}`}>
+<slot></slot></div>
+
+
+<style>
+.grid-container{
+    display: grid;
+    gap:2.5rem;
+
+    @media (width > 600px){
+        grid-template-columns: repeat(var(--cols),1fr);
+    }
+}
+
+</style>

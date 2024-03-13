@@ -2,18 +2,9 @@
 import "../styles/global.css"
 import "../styles/reset.css"
 import Banner from "../components/Banner.astro";
+import Mainlayout from "../layouts/Mainlayout.astro";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato">
-        <title>Case Study Single</title>
-    </head>
-    <body>
-        <Banner imgPath="/src/assets/images/banner-casestudy.jpg" name="banner case study single"/>
-    </body>
-</html>
-
+<Mainlayout>
+<Banner imgPath="/src/assets/images/banner-casestudy.jpg" name="banner case study single"  Headtitle="Case Studies single" variant="yellow" suptitle="Taxes & Efficiency"/>
+</Mainlayout>
