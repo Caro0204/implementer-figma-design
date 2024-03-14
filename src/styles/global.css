@@ -22,7 +22,6 @@
   --size-step-3: clamp(1.875rem, 0.625rem + 3.3333cqi, 3.125rem);
 
   --border-r: 1.8rem;
-  --gap: 1rem;
 }
 
 .headfont {
