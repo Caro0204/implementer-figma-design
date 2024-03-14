@@ -1,0 +1,45 @@
+---
+import "../styles/global.css";
+import "../styles/reset.css";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/**/*.{jpeg,jpg,png,gif}");
+const { name, imgPath } = Astro.props;
+if (!images[imgPath]) throw new Error(`"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`);
+---
+
+<figure>
+  <div class="bag">
+    <Image class="videomid" src={images[imgPath]()} alt={name} />
+  </div>
+</figure>
+
+<style>
+  figure {
+    margin-inline: auto;
+    margin: 2.1rem;
+    display: block;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 58rem;
+      top: 15.5rem;
+      background: var(--grøn);
+      width: 164px;
+      height: 183px;
+      z-index: -1;
+      border-radius: var(--border-r);
+    }
+  }
+  .bag {
+    background: var(--sort18);
+    border-radius: var(--border-r);
+  }
+  .videomid {
+    border-radius: var(--border-r);
+    opacity: 0.4;
+  }
+</style>

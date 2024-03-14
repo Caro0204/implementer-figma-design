@@ -11,83 +11,101 @@ import Image from "astro/components/Image.astro";
 
 <Mainlayout>
   <Banner imgPath="/src/assets/images/banner-team.jpg" name="banner team" Headtitle="team" suptitle="The Consultors" variant="yellow" />
-  <Columns cols="2">
-    <div>
-      <p class="headfont">Meet Our Great Team</p>
-      <p class="brødtekst">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation.</p>
-    </div>
-    <div class="space">
-      <Button variant="black" Buttontext="Join our team" />
-    </div>
-  </Columns>
-  <Columns cols="3">
-    <TeamCard name="Sarah Jasmine" imgPath="/src/assets/images/team-person-sj.jpg" namePerson="Sarah Jasmine" iconName="instagram" iconName1="facebook" iconName2="twitter" />
+  <section class="paddingtop">
+    <Columns cols="2">
+      <div>
+        <p class="headfont">Meet Our Great Team</p>
+        <p class="brødtekst">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation.</p>
+      </div>
+      <div class="space">
+        <Button variant="black" Buttontext="Join our team" />
+      </div>
+    </Columns>
+    <div class="paddingteamcard">
+      <Columns cols="3">
+        <TeamCard name="Sarah Jasmine" imgPath="/src/assets/images/team-person-sj.jpg" namePerson="Sarah Jasmine" iconName="instagram" iconName1="facebook" iconName2="twitter" />
 
-    <TeamCard name="John Carter" imgPath="/src/assets/images/team-person-jc.jpg" namePerson="John Carter" iconName="instagram" iconName1="facebook" iconName2="twitter" />
+        <TeamCard name="John Carter" imgPath="/src/assets/images/team-person-jc.jpg" namePerson="John Carter" iconName="instagram" iconName1="facebook" iconName2="twitter" />
 
-    <TeamCard name="Daisy Stella" description="billede af person" imgPath="/src/assets/images/team-person-ds.jpg" namePerson="Daisy Stella" iconName="instagram" iconName1="facebook" iconName2="twitter" />
+        <TeamCard name="Daisy Stella" description="billede af person" imgPath="/src/assets/images/team-person-ds.jpg" namePerson="Daisy Stella" iconName="instagram" iconName1="facebook" iconName2="twitter" />
 
-    <TeamCard name="Maya Elizabeth" description="billede af person" imgPath="/src/assets/images/team-person-me.jpg" namePerson="Maya Elizabeth" iconName="instagram" iconName1="facebook" iconName2="twitter" />
+        <TeamCard name="Maya Elizabeth" description="billede af person" imgPath="/src/assets/images/team-person-me.jpg" namePerson="Maya Elizabeth" iconName="instagram" iconName1="facebook" iconName2="twitter" />
 
-    <TeamCard name="Ryan Jackson" description="billede af person" imgPath="/src/assets/images/team-person-rj.jpg" namePerson="Ryan Jackson" iconName="instagram" iconName1="facebook" iconName2="twitter" />
-    <TeamCard name="Lilly Victoria" description="billede af person" imgPath="/src/assets/images/team-person-lv.jpg" namePerson="Lilly Victoria" iconName="instagram" iconName1="facebook" iconName2="twitter" />
-  </Columns>
-  <div class="baggrund">
-  <Columns  cols="2">
-    <div>
-      <PillHeading Headtitle="Contact" variant="black" />
-      <p class="header">Ready To Talk?</p>
-      <p class="text">Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Massa placerat duis ultricies lacus sed turpis. Pellentesque pellentesque habitant morbi tristique.</p>
-          <p class="mailinput">your mail address</p>
-        <Button variant="green" Buttontext="Send Message" />
+        <TeamCard name="Ryan Jackson" description="billede af person" imgPath="/src/assets/images/team-person-rj.jpg" namePerson="Ryan Jackson" iconName="instagram" iconName1="facebook" iconName2="twitter" />
+        <TeamCard name="Lilly Victoria" description="billede af person" imgPath="/src/assets/images/team-person-lv.jpg" namePerson="Lilly Victoria" iconName="instagram" iconName1="facebook" iconName2="twitter" />
+      </Columns>
     </div>
-    <div>
-      <Image src={MyImage} alt="gruppe af hænder i en cirkel" />
+  </section>
+  <section>
+    <div class="baggrund">
+      <Columns cols="2">
+        <div>
+          <PillHeading Headtitle="Contact" variant="black" />
+          <p class="header">Ready To Talk?</p>
+          <p class="text">Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Massa placerat duis ultricies lacus sed turpis. Pellentesque pellentesque habitant morbi tristique.</p>
+          <div>
+            <p class="mailinput">your mail address</p>
+            <Button variant="green" Buttontext="Send Message" />
+          </div>
+        </div>
+        <div>
+          <Image src={MyImage} alt="gruppe af hænder i en cirkel" />
+        </div>
+      </Columns>
     </div>
-  </Columns>
-  </div>
+  </section>
+
+  <style>
+    .space {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 25rem;
+    }
+    .mailinput {
+      background: var(--hvid);
+      padding: 1.375rem 1.25rem;
+      color: var(--lysegrå-tekst);
+      font-family: var(--lato);
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.475rem;
+      border-radius: 3.3rem;
+      border: 1px solid var(--lysegrå);
+    }
+
+    .baggrund {
+      background: var(--sort18);
+      border-radius: var(--border-r);
+      padding: 4rem;
+    }
+    .header {
+      font-family: var(--cabin);
+      font-size: 2.8rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 3.2rem;
+      color: var(--hvid);
+    }
+    .text {
+      color: var(--hvid);
+      font-family: var(--lato);
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.4rem;
+    }
+
+    .paddingtop {
+      padding-top: 60px;
+    }
+    .brødtekst {
+      padding-top: 13px;
+    }
+    .paddingteamcard {
+      padding-top: 43px;
+      padding-bottom: 90px;
+    }
+  </style>
 </Mainlayout>
-
-<style>
-  .space {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: 25rem;
-  }
-  .mailinput {
-    background: var(--hvid);
-    padding: 1.375rem 1.25rem;
-    color: var(--lysegrå-tekst);
-    font-family: var(--lato);
-font-size: 1rem;
-font-style: normal;
-font-weight: 400;
-line-height: 1.475rem;
-border-radius: 3.3rem;
-border:1px solid var(--lysegrå);
-  }
-
-  .baggrund{
-    background: var(--sort18);
-    border-radius: var(--border-r);
-    padding: 4rem;
-  }
-  .header{
-    font-family: var(--cabin);
-font-size: 2.8rem;
-font-style: normal;
-font-weight: 700;
-line-height: 3.2rem;
-color: var(--hvid);
-  }
-.text{
-  color: var(--hvid);
-font-family: var(--lato);
-font-size: 1rem;
-font-style: normal;
-font-weight: 400;
-line-height: 1.4rem;
-}
-
-</style>

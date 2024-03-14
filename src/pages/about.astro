@@ -7,7 +7,8 @@ import Mainlayout from "../layouts/Mainlayout.astro";
 import Card from "../components/Card.astro";
 import MyImage from "../assets/images/abouttop.jpg";
 import Image from "astro/components/Image.astro";
-import VideoCenter from "../assets/images/aboutmid.jpg";
+import ImageAbout from "../components/ImageAbout.astro";
+// import VideoCenter from "../assets/images/aboutmid.jpg";
 import TeamCard from "../components/TeamCard.astro";
 import Button from "../components/Button.astro";
 ---
@@ -15,31 +16,35 @@ import Button from "../components/Button.astro";
 <Mainlayout>
   <Banner imgPath="/src/assets/images/banner-about.jpg" name="banner about" Headtitle="About" variant="yellow" suptitle="Creative Services For Boost Your Business Growth" />
   <Columns cols="2">
-    <article>
+    <article class="padding_top">
       <PillHeading Headtitle="Our Vision" variant="green" />
-      <p class="headfont">Turn your ideas into reality</p>
+      <p class="headfont p">Turn your ideas into reality</p>
       <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
-      <ul class="brødtekst-font">
+      <ul class="brødtekst-font p">
         <li>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</li>
         <li>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</li>
       </ul>
     </article>
-    <article>
+    <article class="padding_top">
       <figure>
         <Image class="imgtop" src={MyImage} alt="gruppe af mennesker" />
       </figure>
     </article>
   </Columns>
   <Counter />
-  <section class="margin full">
+  <section class="padding1 full">
     <div>
       <PillHeading Headtitle="Growing with our clients" variant="yellow" />
     </div>
-    <p class="headfont">Our core values & principles</p>
-    <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
-    <div>
-      <Button variant="black" Buttontext="Get in touch" />
-    </div>
+    <Columns cols="2">
+      <div>
+        <p class="headfont">Our core values & principles</p>
+        <p class="padtext">Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+      </div>
+      <div class="space">
+        <Button variant="black" Buttontext="Get in touch" />
+      </div>
+    </Columns>
     <Columns cols="4">
       <Card iconNametop="stack" title="Creative Ideas" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam." />
       <Card iconNametop="barchart" title="Best Features" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
@@ -47,22 +52,25 @@ import Button from "../components/Button.astro";
       <Card iconNametop="tandhjul" title="Easy Solutions" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
     </Columns>
   </section>
-  <article>
-    <div class="center">
+  <article class="padding4">
+    <div class="center paddinghead">
       <PillHeading Headtitle="Our History" variant="green" />
     </div>
-    <p class="headfont center">Better Website Means A User Experience</p>
-    <p class="brødtekst center">Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
-    <div class="bag">
-      <Image class="videomid" src={VideoCenter} alt="gruppe af mennesker video" />
-    </div>
+    <p class="headfont center padding2">Better Website Means A User Experience</p>
+    <p class="brødtekst center padding3">Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
+    <ImageAbout imgPath="/src/assets/images/aboutmid.jpg" name="gruppe af mennesker" />
   </article>
-  <section class="full">
+  <section class="full padding5">
     <div>
       <PillHeading Headtitle="Our Team" variant="yellow" />
     </div>
-    <p class="headfont">We champion the bold to achieve the extraordinary</p>
-    <p class="brødtekst">Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team.</p>
+    <div class="grid-tom">
+      <div>
+        <p class="headfont padding6">We champion the bold to achieve the extraordinary</p>
+        <p class="brødtekst padtext">Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team.</p>
+      </div>
+      <span></span>
+    </div>
     <Columns cols="3">
       <TeamCard name="Sarah Jasmine" imgPath="/src/assets/images/team-person-sj.jpg" namePerson="Sarah Jasmine" iconName="instagram" iconName1="facebook" iconName2="twitter" />
 
@@ -116,17 +124,33 @@ import Button from "../components/Button.astro";
       grid-column: content;
     }
   }
+  .center {
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
+  .space {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 20rem;
+  }
+  .headfont {
+    font-size: var(--size-step-2);
+  }
+  @media (width > 600px) {
+    .brødtekst {
+      font-size: var(--size-step-1);
+    }
+  }
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
   }
+
   .imgtop {
-    border-radius: var(--border-r);
-  }
-  .bag {
-    background: var(--sort18);
     border-radius: var(--border-r);
   }
   figure {
@@ -148,24 +172,83 @@ import Button from "../components/Button.astro";
       border-radius: var(--border-r);
     }
   }
-
-  .center {
-    text-align: center;
-    justify-content: center;
+  .padding_top {
+    padding-top: 40px;
   }
-  .videomid {
-    border-radius: var(--border-r);
-    opacity: 0.4;
-    > * {
-      grid-area: 1/1;
+  .p {
+    padding-top: 19px;
+  }
+  .padding1 {
+    padding: 75px 0px 75px 0px;
+  }
+  .padtext {
+    padding-top: 11px;
+  }
+  .paddinghead {
+    padding-top: 80px;
+  }
+  .padding2 {
+    padding-top: 18px;
+    text-align: left;
+  }
+  .padding3 {
+    padding-top: 11px;
+    text-align: left;
+  }
+  .padding4 {
+    padding-bottom: 45px;
+  }
+  .padding5 {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+  .padding6 {
+    padding-top: 12px;
+  }
+  @media (width > 600px) {
+    .padding_top {
+      padding-top: 90px;
     }
-  }
-  .margin {
-  }
-  .headfont {
-    font-size: var(--size-step-2);
-  }
-  .brødtekst {
-    font-size: var(--size-step-1);
+    .p {
+      padding-top: 19px;
+    }
+    .padding1 {
+      padding: 150px 0px 150px 0px;
+    }
+    .padtext {
+      padding-top: 11px;
+    }
+    .paddinghead {
+      padding-top: 80px;
+    }
+    .padding2 {
+      padding-top: 22px;
+      padding-left: 160px;
+      padding-right: 160px;
+      text-align: center;
+    }
+    .padding3 {
+      padding-top: 11px;
+      padding-left: 180px;
+      padding-right: 180px;
+      text-align: center;
+    }
+    .padding4 {
+      padding-bottom: 100px;
+    }
+    .padding5 {
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
+    .padding6 {
+      padding-top: 12px;
+    }
+    .grid-tom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .headfont {
+      line-height: 2.7rem;
+    }
   }
 </style>

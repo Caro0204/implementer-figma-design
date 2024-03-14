@@ -9,8 +9,8 @@ const { title, text, iconNametop } = Astro.props;
 <article>
   <div>
     <div class="felx">
-    <Icon class="size" name={iconNametop} />
-    <h3>{title}</h3>
+      <Icon class="size" name={iconNametop} />
+      <h3>{title}</h3>
     </div>
     <p class="brødtekst">{text}</p>
     <a href="#0">Read More</a>
@@ -22,24 +22,25 @@ const { title, text, iconNametop } = Astro.props;
     --arrow: url("../src/icons/pil.svg");
   }
 
-  .felx{
+  .felx {
     display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 1.3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.3rem;
   }
-  .size{
-    width: 20%;
+  .size {
+    width: 25%;
   }
-  article{
+  article {
     display: flex;
-padding: 2.25rem 1.4375rem;
-align-items: flex-start;
-gap: 0.625rem;
-border-radius: 1.2rem;
-border: 1px solid var( --lysegrå-border);
-background: var(--hvid);
-
+    padding: 2.25rem 1.4375rem;
+    margin-top: 34px;
+    align-items: flex-start;
+    gap: 0.625rem;
+    border-radius: 1.2rem;
+    border: 1px solid var(--lysegrå-border);
+    background: var(--hvid);
+    height: fit-content;
   }
 
   h3 {
@@ -50,6 +51,10 @@ background: var(--hvid);
     font-weight: 600;
     line-height: 1.45rem;
   }
+
+  p {
+    padding-top: 10px;
+  }
   a {
     display: flex;
     align-items: center;
@@ -58,6 +63,7 @@ background: var(--hvid);
     color: var(--sort18);
     text-decoration: none;
     font-family: var(--lato);
+    padding-top: 22px;
   }
   a::after {
     content: "";

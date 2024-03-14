@@ -33,18 +33,26 @@ import "../styles/reset.css";
     gap: 8.4rem;
 
     @media (width < 600px) {
-      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 5.5rem;
     }
     > * {
       display: flex;
       flex-direction: column-reverse;
       font-size: 1.1rem;
       color: var(--sort18);
+      @media (width < 600px) {
+        font-size: 0.7rem;
+      }
 
       :last-child {
         font-size: 3.1rem;
         font-weight: 700;
         font-family: var(--cabin);
+
+        @media (width < 600px) {
+          font-size: 1.8rem;
+        }
       }
     }
   }
