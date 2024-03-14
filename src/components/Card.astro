@@ -9,7 +9,7 @@ const { title, text, iconNametop } = Astro.props;
 <article>
   <div>
     <div class="felx">
-    <Icon name={iconNametop} />
+    <Icon class="size" name={iconNametop} />
     <h3>{title}</h3>
     </div>
     <p class="brødtekst">{text}</p>
@@ -27,6 +27,9 @@ const { title, text, iconNametop } = Astro.props;
 flex-direction: column;
 align-items: flex-start;
 gap: 1.3rem;
+  }
+  .size{
+    width: 20%;
   }
   article{
     display: flex;

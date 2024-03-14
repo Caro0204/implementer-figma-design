@@ -17,22 +17,27 @@
   --lato: "Lato";
   --cabin: "Cabin";
 
+  --size-step-1: clamp(0.625rem, 0.25rem + 1cqi, 1rem);
+  --size-step-2: clamp(2.1875rem, 1.5625rem + 1.6667cqi, 2.8125rem);
+  --size-step-3: clamp(1.875rem, 0.625rem + 3.3333cqi, 3.125rem);
+
   --border-r: 1.8rem;
   --gap: 1rem;
 }
+
 .headfont {
   color: var(--sort18);
   font-family: var(--cabin);
   font-size: normal;
   font-weight: 700;
   line-height: 3.2rem;
-  font-size: 2.8rem;
+  font-size: var(--size-step-3);
 }
 
 .brødfont {
   color: var(--lillagrå-brødtekt);
   font-family: var(--lato);
-  font-size: 1rem;
+  font-size: var(--size-step-1);
   font-style: normal;
   font-weight: 400;
   line-height: 1.4rem;

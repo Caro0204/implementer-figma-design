@@ -2,7 +2,6 @@
 import "../styles/global.css"
 import "../styles/reset.css"
 import Banner from "../components/Banner.astro";
-import Mainlayout from "../layouts/Mainlayout.astro";
 ---
 
 <html lang="en">
@@ -27,7 +26,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
         <p>The Balance Sheet is a summary of the assets and liabilities and equity of a business at a specific point of time.</p>
       </li>
       
-      <li>
+      <li class="farve">
         <h3>Income Statement</h3>
         <p>The Income (Profit and Loss) Statement, commonly referred to as the P&L statement, summarizes the revenue and expenses for a specific time period (one month, one quarter, one year, etc.)</p>
       </li>
@@ -91,7 +90,12 @@ main {
     }
   }
 }
-
+.farve{
+    background: var(--sort18);
+    h3, p{
+        color: var(--hvid); 
+    }
+}
 ul {
   display: flex;
   gap: 1rem;
